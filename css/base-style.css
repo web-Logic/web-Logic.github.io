@@ -54,6 +54,7 @@ table {
 	width: 100%;
 	z-index: 98;
 	background:white;
+    opacity: 0.9;
 }
 
 /* --- Branding --- */
@@ -111,7 +112,7 @@ table {
 	animation: color-black-to-red 2s ease infinite alternate;
 }
 .nav-link-style{
-	font-family: "Vollkorn", sans-serif;
+	font-family: "Ubuntu", sans-serif;
 }
 /* --- Search --- */
 #nav-search{
