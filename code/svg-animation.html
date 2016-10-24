@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="author" content="Salman Anjum">
+	<meta name="description" content="Blog dedicated to best coding and design practices">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Web Logic</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Droid+Serif|Vollkorn:400|Racing+Sans+One" rel="stylesheet">
+    <link href="https://file.myfontastic.com/ujD2LYRPx3Jm8tKB3duH4k/icons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/base-style.css">
+	<link rel="stylesheet" type="text/css" href="../css/article-style.css">
+
+</head>
+<body>
+	<div id="page-wrapper">
+
+		<nav id="nav-wrapper">	
+
+			<div id="nav-controls">
+				<ul>
+					<li>
+						<a href="#" class="link-trigger"><span class="control-svg control-hamburger"></span></a>
+					</li>
+				</ul>
+			</div>
+
+			<div id="nav-branding">
+				<img src="../img/logo.svg" alt="Logo" height="40px" onerror="this.onerror=null; this.src='../img/logo.png'">
+			</div>	
+
+			<div id="nav-search" class="search-hidden">
+				<form>
+					<input type="text" name="search" placeholder="search" class="nav-search-box">
+					<button class="nav-search-clear" type="reset"><span data-icon="v"></span></button>
+					<input type="submit" name="submit" class="nav-search-submit hidden">
+				</form>
+			</div>
+
+			<div id="nav-links" class="nav-link-style links-closed">				
+				<ul>
+					<li><a href="#">Code</a></li>
+					<li><a href="#">Design</a></li>
+					<li><a href="#">Projects</a></li>
+					<li><a href="#">About</a></li>
+				</ul>				
+			</div>	
+
+		</nav>
+
+		<div id="content-wrapper">
+			<div class="grid">
+				<h3>First Take on SVG Animations</h3>
+				<p>CSS 3 introduced some cool animation options using just CSS. However I feel that they are very limited. There are only a limited number of events to which CSS animations respond. Moreover complex animations are just out of question. My primary reason to search for other animation tools is to create animated icons. Animated icons can be achieved through CSS but as I have mentioned earlier you can only do a bunch a different things (rotate, scale, change opacity, etc). </p>
+				<h2>The options I considered</h2>
+				<p>To be fair, I didn't search much about the alternatives available. I stumbled upon <a href="http://tympanus.net/codrops/2013/11/05/animated-svg-icons-with-snap-svg/">this</a> Codrops article. There isn't much explanation available, moreover deciphering the code seemed like too much work. However I knew what I had to choose - SVG animated through snapsvg.js. </p>
+				<p>Apart from SVG animation, I also looked at GIF animations. However GIF animations have two big drawbacks: 
+				<ul>
+					<li>They are created frame by frame, if I use Photoshop and Illustrator.</li>
+					<li>GIFs aren't the best quality available.</li>
+				</ul>
+				</p>
+			</div>
+		</div>
+		
+	</div>
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/snap.svg-min.js"></script>
+	<script src="../js/index-code.js"></script>
+</body>
+</html>
+		
