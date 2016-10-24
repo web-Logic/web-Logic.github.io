@@ -53,6 +53,8 @@
 	font-size: 18px;
 	font-weight: bold;
 	padding: 0 10px;
+	font-family: "Ubuntu";
+	font-weight: lighter;
 }
 
 /* ---- Media Query ---- */

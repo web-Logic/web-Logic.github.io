@@ -13,7 +13,7 @@
 .grid p{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
-	line-height: 1.5;
+	line-height: 1.8;
 	margin-bottom: 10px;
 }
 .grid h2{
@@ -29,6 +29,42 @@
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 }
-.grid ul li{
-	line-height: 1.5;
+.grid ul li, .grid ol li{
+	line-height: 1.8;
+}
+.grid ol{
+	list-style-position: inside;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+}
+/* -- Options -- */
+.grid-item-options{
+	margin: 10px;
+	margin-bottom: 30px;
+}
+.grid-item-options ul{
+	list-style: none;
+}
+.grid-item-options ul li{
+	display: inline-block;
+}
+.grid-item-options ul li a{
+	color: #F1574C;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 0 10px;
+	font-family: "Ubuntu";
+	font-weight: lighter;
+}
+
+/* ---- Media Query ---- */
+@media only screen and (max-width: 960px) {
+    
+}
+@media all and (max-width: 768px) {
+	/* ---- Content Wrapper ---- */
+	/* ---- Grid ---- */
+	.grid{
+		width: 95%;
+	}	
 }

@@ -54,6 +54,12 @@
 		<div id="content-wrapper">
 			<div class="grid">
 				<h3>First Take on SVG Animations</h3>
+				<div class="grid-item-options">
+					<ul>
+						<li><a href="#" data-icon="x">&nbsp 0 comments</a></li>
+						<li><a href="#" data-icon="g">&nbsp 24/10/2016</a></li>
+					</ul>
+				</div>
 				<p>CSS 3 introduced some cool animation options using just CSS. However I feel that they are very limited. There are only a limited number of events to which CSS animations respond. Moreover complex animations are just out of question. My primary reason to search for other animation tools is to create animated icons. Animated icons can be achieved through CSS but as I have mentioned earlier you can only do a bunch a different things (rotate, scale, change opacity, etc). </p>
 				<h2>The options I considered</h2>
 				<p>To be fair, I didn't search much about the alternatives available. I stumbled upon <a href="http://tympanus.net/codrops/2013/11/05/animated-svg-icons-with-snap-svg/">this</a> Codrops article. There isn't much explanation available, moreover deciphering the code seemed like too much work. However I knew what I had to choose - SVG animated through snapsvg.js. </p>
@@ -63,13 +69,41 @@
 					<li>GIFs aren't the best quality available.</li>
 				</ul>
 				</p>
+				<h2>SnapSvg Library</h2>
+				<p>SnapSvg is a comprehensive library for both creating and animating SVGs. I used SnapSVG only for animation purposes. For creating SVGs, I used Inkscape. Even though my goto program for vector graphics is Adobe Illustrator, I chose Inkscape because it generates cleaner SVG output.</p>
+				<p>My workflow while using Inkscape and Snapsvg can be summarised below:
+					<ol>
+						<li>
+							Create svg in Inkscape, give an id to each element of your SVG drawing.
+						</li>
+						<li>
+							In your Javascript code, select the container element to which SVG tag will be appended. 
+						</li>
+						<li>
+							Provide url of the SVG file
+						</li>
+						<li>
+							Assign a variable to the elements of the SVG drawing which will be animated.
+						</li>
+						<li>
+							Animate!
+						</li>
+					</ol>
+				<p>
+				Yeah, I know the above workflow doesn't explain much. The example below will clear out your doubts.
+				</p>
+				<h2>Animated hamburger menu</h2>
+				```javascript
+				function test(){
+					alert('Hi');
+				}
 			</div>
 		</div>
 		
 	</div>
 	<script src="../js/jquery-3.1.1.min.js"></script>
 	<script src="../js/snap.svg-min.js"></script>
-	<script src="../js/index-code.js"></script>
+	<script src="../js/article-code.js"></script>
 </body>
 </html>
 		
