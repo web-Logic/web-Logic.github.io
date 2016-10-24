@@ -12,7 +12,7 @@
 }
 .grid p{
 	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 1.8;
 	margin-bottom: 10px;
 }
@@ -27,7 +27,7 @@
 	list-style-image: url('../img/list-style-img.png');
 	list-style-position: inside;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 }
 .grid ul li, .grid ol li{
 	line-height: 1.8;
@@ -35,7 +35,7 @@
 .grid ol{
 	list-style-position: inside;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 }
 /* -- Options -- */
 .grid-item-options{

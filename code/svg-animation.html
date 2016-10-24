@@ -7,10 +7,11 @@
 	<meta name="description" content="Blog dedicated to best coding and design practices">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Web Logic</title>
+	<title>Web Logic - First Take on SVG Animations</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Droid+Serif|Vollkorn:400|Racing+Sans+One" rel="stylesheet">
     <link href="https://file.myfontastic.com/ujD2LYRPx3Jm8tKB3duH4k/icons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/monokai.css">
     <link rel="stylesheet" type="text/css" href="../css/base-style.css">
 	<link rel="stylesheet" type="text/css" href="../css/article-style.css">
 
@@ -42,7 +43,7 @@
 
 			<div id="nav-links" class="nav-link-style links-closed">				
 				<ul>
-					<li><a href="#">Code</a></li>
+					<li><a href="index.html">Code</a></li>
 					<li><a href="#">Design</a></li>
 					<li><a href="#">Projects</a></li>
 					<li><a href="#">About</a></li>
@@ -93,15 +94,106 @@
 				Yeah, I know the above workflow doesn't explain much. The example below will clear out your doubts.
 				</p>
 				<h2>Animated hamburger menu</h2>
-				```javascript
-				function test(){
-					alert('Hi');
-				}
+				<p>
+				First and foremost create the SVG file. Below is the SVG code corresponding to hamburger.</p>
+				<pre>
+					<code class="xml">
+&lt;svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="100" viewBox="0 0 99.999997 99.999997" width="100" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
+	&lt;rect id="top" y="1.2712" x="1.2" height="16" width="98"/&gt;
+	&lt;rect id="mid" y="42.373" x="1.2" height="16" width="98"/&gt;
+	&lt;rect id="bottom" y="83.475" x="1.2" height="16" width="98"/&gt;
+&lt;/svg&gt;
+					</code>
+				</pre>
+				<p>The code above generates the following SVG:</p>
+
+				<svg style="margin-bottom : 10px;"id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="100" viewBox="0 0 99.999997 99.999997" width="100" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+					<rect id="top" y="1.2712" x="1.2" height="16" width="98"/>
+					<rect id="mid" y="42.373" x="1.2" height="16" width="98"/>
+					<rect id="bottom" y="83.475" x="1.2" height="16" width="98"/>
+				</svg>
+				<p>Now we turn our attention to Javascript (make sure that snasvg javascript file has been included). The first step is to choose the HTML element to which our external SVG will be appended to.</p>
+				<pre>
+					<code>
+var svg_hamburger = new Snap('.hamburger');
+//.hamburger is the class of container div 
+					</code>
+				</pre>
+				<p>Next we use the SnapSvg's load() function to point to our SVG's url. The second argument of load() function is a callback function which states what will happen after our svg has been loaded. The argument f to the callback function serves as a reference to the loaded SVG.</p>
+				<pre>
+					<code>
+var svg_hamburger = new Snap('.hamburger');
+//.hamburger is the class of container div
+Snap.load("hamburger.svg",function(f){}); 
+					</code>
+				</pre>
+				<p>Next we select the three different parts of the hamburger. These three parts are selected by their ids.</p>
+				<pre>
+					<code>
+var svg_hamburger = new Snap('.hamburger');
+//.hamburger is the class of container div
+Snap.load("hamburger.svg",function(f){
+	var top = f.select("#top");
+	var mid = f.select("#mid");
+	var bottom = f.select("#bottom");
+}); 
+					</code>
+				</pre>
+				<p>Now we define an event which will trigger the animation. Lets select click() function. Inside the anonymous function passed to the click() function we will define all our animations. Animation will continue as:
+				<ol>
+					<li>The center bar will disappear.</li>
+					<li>Top and bottom bars will rotate +45 and -45 degrees respectively.
+				</ol>
+				</p>
+				<pre>
+					<code>
+var svg_hamburger = new Snap('.hamburger');
+//.hamburger is the class of container div
+Snap.load("hamburger.svg",function(f){
+	var top = f.select("#top");
+	var mid = f.select("#mid");
+	var bottom = f.select("#bottom");
+
+	mid.animate({opacity:"0", 200, mina.elastic});
+	//first argument is the property to be animated
+	//second argument is the animation duration
+	//third argument is the timing function
+	//fourth argument is callback function (can be omitted)
+
+	top.animate({transform:"rotate(45 0 25)"}, 200, mina.elastic);
+	top.animate({transform:"rotate(-45 0 75)"}, 200, mina.elastic);
+}); 
+					</code>
+				</pre>
+				<p>The final step is using the append function.</p>
+				<pre>
+					<code>
+var svg_hamburger = new Snap('.hamburger');
+//.hamburger is the class of container div
+Snap.load("hamburger.svg",function(f){
+	var top = f.select("#top");
+	var mid = f.select("#mid");
+	var bottom = f.select("#bottom");
+
+	mid.animate({opacity:"0", 200, mina.elastic});
+	//first argument is the property to be animated
+	//second argument is the animation duration
+	//third argument is the timing function
+	//fourth argument is callback function (can be omitted)
+
+	top.animate({transform:"rotate(45 0 25)"}, 200, mina.elastic);
+	top.animate({transform:"rotate(-45 0 75)"}, 200, mina.elastic);
+
+	svg_hamburger.append(f);
+}); 
+					</code>
+				</pre>
 			</div>
 		</div>
 		
 	</div>
 	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/highlight.pack.js"></script>
 	<script src="../js/snap.svg-min.js"></script>
 	<script src="../js/article-code.js"></script>
 </body>

@@ -32,6 +32,9 @@ body {
 a {
 	text-decoration: none;
 }
+code{
+	font-family: monospace;
+}
 blockquote, q {
 	quotes: none;
 }

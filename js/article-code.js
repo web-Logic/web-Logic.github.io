@@ -1,9 +1,12 @@
+hljs.initHighlightingOnLoad();
+
 $(document).ready(function(){
+
 	var linkDiv = $('#nav-links');
 	var triggerLink = $('a.link-trigger');	
 
 	var svg_hamburger = new Snap('.control-hamburger');
-	Snap.load("../svg/hamburger.svg",function(f){
+	Snap.load("svg/hamburger.svg",function(f){
 
 		sv_top_bar = f.select("#sv-top-bar");
 		sv_mid_bar_1 = f.select("#sv-mid-bar-1");
