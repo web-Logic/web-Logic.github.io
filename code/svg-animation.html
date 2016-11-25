@@ -61,10 +61,11 @@
 						<li><a href="#" data-icon="g">&nbsp 24/10/2016</a></li>
 					</ul>
 				</div>
-				<p>CSS 3 introduced some cool animation options using just CSS. Those are great for small animation bits. However I feel that they are very limited when you try anything complex. There are only a limited number of events to which CSS animations respond. My primary reason to search for other animation tools is to create animated icons. Animated icons can be achieved through CSS but as I have mentioned earlier you can only do a bunch a different things (rotate, scale, change opacity, etc). </p>
+				<p>CSS 3 introduced some cool animation options using just CSS. Those are great for small animation bits. CSS animations are fairly easy to implement and animate very smoothly. However they are very limited when you try anything complex. There are only a limited number of events to which CSS animations respond.</br>
+				My primary reason to search for other animation tools was to create animated icons. Animated icons can be achieved through CSS but as I have mentioned earlier, you can only do a bunch a different things (rotate, scale, change opacity, etc). However the biggest letdown is that all the animations are applied to the entire icon, you can't animate individual components of the icon.</p>
 				<h2>The options I considered</h2>
-				<p>To be fair, I didn't search much about the alternatives available. I stumbled upon <a href="http://tympanus.net/codrops/2013/11/05/animated-svg-icons-with-snap-svg/">this</a> Codrops article. There isn't much explanation available in the codrops articel, moreover deciphering the code seemed like too much work. However I knew what I had to choose - SVG animated through snapsvg.js. </p>
-				<p>Apart from SVG animation, I also looked at GIF animations. However GIF animations have two big drawbacks: 
+				<p>To be fair, I didn't search much about the alternatives available. I stumbled upon <a href="http://tympanus.net/codrops/2013/11/05/animated-svg-icons-with-snap-svg/">this</a> Codrops article showing cool animated icons. There isn't much explanation available in the codrops article, moreover deciphering the code seemed like too much work. However I knew what I had to choose - SVG icnos animated through <a href="https://snapsvg.io">SnapSVG.js</a>. </p>
+				<p>Apart from SVG animation, I also looked at GIF animations. Photoshop has built in support for this. However GIF animations have two big drawbacks: 
 				<ul>
 					<li>They are created frame by frame, if I use Photoshop and Illustrator.</li>
 					<li>GIFs aren't the best quality available.</li>
@@ -95,7 +96,7 @@
 				</p>
 				<h2>Animated hamburger menu</h2>
 				<p>
-				First and foremost create the SVG file. Below is the SVG code corresponding to hamburger.</p>
+				First and foremost create the SVG file. Below is the SVG code corresponding to the hamburger menu.</p>
 				<pre>
 					<code class="xml">
 &lt;svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="100" viewBox="0 0 99.999997 99.999997" width="100" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
@@ -127,7 +128,7 @@ var svg_hamburger = new Snap('.hamburger');
 Snap.load("hamburger.svg",function(f){}); 
 					</code>
 				</pre>
-				<p>Next we select the three different parts of the hamburger. These three parts are selected by their ids.</p>
+				<p>Next we select the three different parts of the hamburger (the three different bars which make up the hamburger menu). These three parts are selected by their ids.</p>
 				<pre>
 					<code>
 var svg_hamburger = new Snap('.hamburger');
@@ -139,7 +140,7 @@ Snap.load("hamburger.svg",function(f){
 }); 
 					</code>
 				</pre>
-				<p>Now we define an event which will trigger the animation. Lets select click() function. Inside the anonymous function passed to the click() function we will define all our animations. Animation will continue as:
+				<p>Now we define an event which will trigger the animation. Lets pick click() function. Inside the anonymous function passed to the click() function, we will define all our animations. Animation will continue as:
 				<ol>
 					<li>The center bar will disappear.</li>
 					<li>Top and bottom bars will rotate +45 and -45 degrees respectively.
